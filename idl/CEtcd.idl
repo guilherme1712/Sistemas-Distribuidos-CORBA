@@ -1,0 +1,26 @@
+// Alunos:
+// Guilherme Daudt
+// Bruno Miglioreto
+// Vitor Vale
+
+
+// Compilar com:
+//
+//     tao_idl -Gstl Conta.idl
+//
+// para gerar stub e skeleton.
+//
+
+exception InvalidKey {};
+
+interface CEtcd {
+
+    // Atributos
+    readonly attribute string id;
+
+    // Métodos
+    boolean put(in string key, in string val);
+    string get(in string key) raises (InvalidKey);
+    void del(in string key) raises (InvalidKey);
+};
+
