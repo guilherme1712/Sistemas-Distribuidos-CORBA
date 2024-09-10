@@ -38,10 +38,10 @@ int main(int argc, char* argv[])
         ger->activate();
 	
         // 3. Instancia "servants"
-        Conta_i ci;
+        CEtcd_i ci;
 	
         // 4. Registra servos no POA, criando objetos distribuídos
-        Conta_var conta = ci._this();
+        CEtcd_var CEtcd = ci._this();
 	
         // 5. Publica IOR NO SERVIDOR DE NOMES
 
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
         nome.length(1);
         nome[0].id = string_dup(argv[1]);
 
-        ns->rebind(nome, conta.in());
+        ns->rebind(nome, CEtcd.in());
 
         /* String_var ior = orb->object_to_string(conta.in());
         ofstream arq("conta.ior");

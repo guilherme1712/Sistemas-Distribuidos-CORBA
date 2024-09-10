@@ -8,13 +8,13 @@ include $(ACE_ROOT)/include/makeinclude/platform_macros.GNU
 # Parâmetros:
 #
 
-PROJECT = CEtcd
+PROJECT = CEtcd_PD
 SERVER = true
 
 IDL.idl = CEtcd.idl
 COMMON.cpp =
 SOURCES.cpp = \
-	ContaI.cpp \
+	CEtcd_i.cpp \
 	servidor.cpp
 
 BINDIR = ../bin

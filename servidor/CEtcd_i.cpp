@@ -1,18 +1,10 @@
-#include "CEtcd.h"
+#include "CEtcdS.h"
 #include <iostream>
 #include <string>
 #include <map>
 #include <stdexcept>
 
 using namespace std;
-
-// Definição da exceção InvalidKey
-class InvalidKey : public exception {
-public:
-  const char* what() const throw() {
-    return "Chave inválida";
-  }
-};
 
 // Implementação da classe CEtcd_i
 class CEtcd_i : public POA_CEtcd {
@@ -24,19 +16,19 @@ public:
   ~CEtcd_i() {}
 
   // Implementação do atributo readonly id
-  std::string id() override {
+  std::string id() {
     return id_;
   }
 
   // Implementação do método put
-  bool put(const std::string& key, const std::string& val) override {
+  bool put(const std::string& key, const std::string& val) {
     // Insere ou modifica o par chave:valor
     auto result = tabela_.insert_or_assign(key, val);
     return result.second; // Retorna true se a chave foi nova, false se foi modificada
   }
 
   // Implementação do método get
-  std::string get(const std::string& key) override {
+  std::string get(const std::string& key) {
     auto it = tabela_.find(key);
     if (it != tabela_.end()) {
       return it->second; // Retorna o valor associado à chave
@@ -46,7 +38,7 @@ public:
   }
 
   // Implementação do método del
-  void del(const std::string& key) override {
+  void del(const std::string& key) {
     auto it = tabela_.find(key);
     if (it != tabela_.end()) {
       tabela_.erase(it); // Remove a chave e o valor associado
