@@ -10,7 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "CEtcdS.h"
+#include "CEtcdI.h"
 #include <orbsvcs/CosNamingC.h>
 
 using namespace std;
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
         ger->activate();
 	
         // 3. Instancia "servants"
-        CEtcd ci;
+        CEtcd_i ci;
 	
         // 4. Registra servos no POA, criando objetos distribuídos
         CEtcd_var CEtcd = ci._this();

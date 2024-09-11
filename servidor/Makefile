@@ -14,7 +14,7 @@ SERVER = true
 IDL.idl = CEtcd.idl
 COMMON.cpp =
 SOURCES.cpp = \
-	CEtcd_i.cpp \
+	CEtcdI.cpp \
 	servidor.cpp
 
 BINDIR = ../bin
