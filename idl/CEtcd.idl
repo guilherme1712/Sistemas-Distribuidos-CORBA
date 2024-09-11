@@ -6,11 +6,13 @@
 
 // Compilar com:
 //
-//     tao_idl -Gstl Conta.idl
+//     tao_idl -Gstl Cetcd.idl
 //
 // para gerar stub e skeleton.
 //
 
+
+// Definição da exceção
 exception InvalidKey {};
 
 interface CEtcd {
@@ -20,7 +22,6 @@ interface CEtcd {
 
     // Métodos
     boolean put(in string key, in string val);
-    string get(in string key) raises (InvalidKey);
-    void del(in string key) raises (InvalidKey);
+    string get(in string key) raises(InvalidKey);
+    void del(in string key) raises(InvalidKey);
 };
-

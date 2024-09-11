@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
         ger->activate();
 	
         // 3. Instancia "servants"
-        CEtcd_i ci;
+        CEtcd ci;
 	
         // 4. Registra servos no POA, criando objetos distribuídos
         CEtcd_var CEtcd = ci._this();
